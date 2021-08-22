@@ -72,6 +72,20 @@ function batalhaPokemon(id1, id2) {
   return `${pokemon1.nome}: ${pokemon1.hp} / ${pokemon2.nome}: ${pokemon2.hp}`;
 }
 
+function curarPokemon(id) {
+  const pokemonferido = pokemons[id];
+  const curaMaxima = 20;
+  const curaMinima = 10;
+
+  if (pokemonferido.hp >= 0 && pokemonferido.hp <= 80) {
+    pokemonferido.hp = pokemonferido.hp + curaMaxima;
+  } else if (pokemonferido.hp == 90) {
+    pokemonferido.hp = pokemonferido.hp + curaMinima;
+  }
+
+  return `${pokemonferido.hp}`;
+}
+
 module.exports = {
   salvarPokemons,
   mostrarPokemon,
@@ -79,4 +93,5 @@ module.exports = {
   atualizarPokemon,
   deletarPokemon,
   batalhaPokemon,
+  curarPokemon,
 };

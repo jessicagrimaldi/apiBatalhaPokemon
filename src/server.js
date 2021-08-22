@@ -44,4 +44,8 @@ app.post("/batalha", (req, res) => {
   res.send(dataBase.batalhaPokemon(req.body.id1, req.body.id2));
 });
 
-app.listen(3003);
+app.post("/curar", (req, res) => {
+  res.send(dataBase.curarPokemon(req.body.id1));
+});
+
+app.listen(3000);
